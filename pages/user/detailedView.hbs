@@ -44,26 +44,27 @@
 </nav>
 
 
-
+<div class="head" style="text-align:center;">
 <h2>{{data.heading}}</h2>
-
-
+<p>By {{data.createdBy.fname}} {{data.createdBy.lname}}</p>
+</div>
+<br>
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner ">
        {{#if data.images.[0].filename }}
     <div class="carousel-item active w-100 object-fit-fill">
-     <img src="/uploads/{{data.images.[0].filename}}" class="d-block" style="height: 600px; width: 100vw;" alt="...">
+     <img src="/uploads/{{data.images.[0].filename}}" class="d-block" style="height: 400px; width: 90vw;margin:auto;" alt="...">
      </div>
     {{/if}}
    
       {{#if data.images.[1].filename }}
     <div class="carousel-item w-100 object-fit-fill">
-     <img src="/uploads/{{data.images.[1].filename}}" class="d-block" style="height: 600px; width: 100vw;" alt="...">
+     <img src="/uploads/{{data.images.[1].filename}}" class="d-block" style="height: 400px; width: 90vw; margin:auto;" alt="...">
      </div>
     {{/if}}
       {{#if data.images.[2].filename }}
     <div class="carousel-item w-100 object-fit-fill">
-     <img src="/uploads/{{data.images.[2].filename}}" class="d-block" style="height: 600px; width: 100vw;" alt="...">
+     <img src="/uploads/{{data.images.[2].filename}}" class="d-block" style="height: 400px; width: 90vw; margin:auto;" alt="...">
       </div>
     {{/if}}
   </div>
@@ -76,8 +77,10 @@
     <span class="visually-hidden">Next</span>
   </button>
 
-  <p>{{data.content}}</p>
-</div>
+  <br>
+  <div class="cont" style="padding-left: 5%;">
+  {{data.content}}
+</div></div>
 
 
 

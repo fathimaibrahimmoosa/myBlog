@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="d-flex flex-column justify-content-center align-item-center vh-100">
-    <form action="/admin/createBlog" method="post" enctype="multipart/form-data" id="createBlog">
+    <form action="/createBlog?id={{userDetails._id}}" method="post" enctype="multipart/form-data" id="createBlog">
     <div class="form-group">
         <label for="inputDeliveryDate" class="col-lg-2 control-label">Category</label>
         <div class="col-lg-5">
@@ -48,7 +48,7 @@
     </fieldset>
     </form>
     </div>
-    <script src="/adminScript.js"></script>
+    <script src="/script.js"></script>
 
 </body>
 </html>

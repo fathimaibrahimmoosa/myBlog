@@ -8,7 +8,8 @@ const uploadPage=(req,res)=>
 
 const createBlog=(req,res)=>
 {
-    const fileStorage=multer.diskStorage({
+    const fileStorage=multer.diskStorage(
+    {
         destination:(req, file, cb)=>
         {
             cb(null,"public/uploads");
@@ -23,18 +24,18 @@ const createBlog=(req,res)=>
     upload(req,res,(err)=>
     {
             
-    BLOGS(
-    {
-        heading:req.body.Category,
-        content:req.body.content,
-        images:req.files,
+        BLOGS(
+        {
+            heading:req.body.Category,
+            content:req.body.content,
+            images:req.files,
 
-    }).save().then(response=>
-    {
-        res.redirect('/admin/uploads');
+        }).save().then(response=>
+            {
+                res.redirect('/admin/uploads');
 
+            })
     })
-})
 }
 
 

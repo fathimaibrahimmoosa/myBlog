@@ -1,4 +1,5 @@
 const mongoose=require('mongoose')
+const { users } = require('./userModel')
 
 const blogSchema=mongoose.Schema(
 {
@@ -12,10 +13,15 @@ const blogSchema=mongoose.Schema(
         type:Date,
         default: new Date()
     },
+    createdBy:
+    {
+        type:mongoose.Types.ObjectId,
+        ref:"users"
+    },
     content:
     {
         type:String,
-        //required:true
+        required:true
     },
     images:[]
 })

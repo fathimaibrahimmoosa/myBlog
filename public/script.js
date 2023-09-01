@@ -2,7 +2,8 @@
 function doSignup()
 {
     let formData={}
-        formData.name=document.getElementById("name").value
+        formData.fname=document.getElementById("fname").value
+        formData.lname=document.getElementById("lname").value
         formData.email=document.getElementById("email").value
         formData.password1=document.getElementById("password1").value
         formData.password2=document.getElementById("password2").value
@@ -26,7 +27,7 @@ function doSignup()
 function doLogin()
 {
     let loginData={}
-    loginData.name=document.getElementById("name").value
+    loginData.email=document.getElementById("email").value
     loginData.password1=document.getElementById("password1").value
     //console.log(loginData)
     fetch('/login',
@@ -53,7 +54,6 @@ function doLogin()
                     document.getElementById('warning').innerHTML="  "
                 },3000)
             }
-            //console.log(data);
         })
 
 }
@@ -62,4 +62,20 @@ const logout=()=>
     localStorage.clear()
     sessionStorage.clear()
     location.assign('/logout')
+}
+
+const showImages=()=>
+{
+    const imagesInput=document.getElementById('imageInput')
+    const imagePreview=document.getElementById('imagePreview')
+    document.getElementById('imagePreview').innerHTML=null
+    const selectedImages=imagesInput.files
+    for(let i=0;i<selectedImages.length;i++)
+    {
+        const image=document.createElement('img')
+        image.src=URL.createObjectURL(selectedImages[i])
+        image.style.width="150px";
+        image.style.margin="3px";
+        imagePreview.appendChild(image)
+    }
 }
